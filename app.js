@@ -16,11 +16,10 @@ app.use('/', require('./routes/music'));
 // app.get('/login',(request, response)=>{
 //     response.send('Login Page');
 // })
-const server = app.listen(1234, (err)=>{
-    if(err){
-        console.log('Error is ',err);
-    }
-    else{
-        console.log('Server Started.... ', server.address().port);
-    }
+const server = app.listen(process.env.PORT || 1234, (err) => {
+  if (err) {
+    console.log('Error is ', err);
+  } else {
+    console.log('Server Started.... ', server.address().port);
+  }
 });
